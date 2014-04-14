@@ -7,3 +7,14 @@
                       :confirm => "Sure you want to delete?",
                       :method => "delete",
                       :class => "btn btn-danger" %>
+<hr>
+
+<%= render './answers/form' %><br>
+
+<hr>
+
+<ul>
+  <% @question.answers.each do |answer| %>
+    <li><%= answer.content %></li>
+  <% end %>
+</ul>

@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :question do
+    title "Turtles and their color"
+    content "What color are turtles"
   end
 end
