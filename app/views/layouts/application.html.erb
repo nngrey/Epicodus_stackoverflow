@@ -7,10 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class = 'container'>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <%= link_to "Homepage", questions_path, :class => "navbar-text pull-left" %>
+      <%= link_to 'Ask a Question', new_question_path, :class => "navbar-text pull-left"%>
+    </div>
+  </div>
+  <br><br>
+
+  <div class = 'container' id='main'>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
     <%= yield %>
   </div>
+
 </body>
 </html>
