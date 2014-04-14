@@ -4,7 +4,7 @@ StackOverflow::Application.routes.draw do
     resources :answers
   end
   resources :users do
-    resources :questions
+    resources :questions, :except => [:new, :create]
     resources :answers
   end
   resources :answers
