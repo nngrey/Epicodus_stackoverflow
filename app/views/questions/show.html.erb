@@ -1,5 +1,5 @@
 <h1><%= @question.title %></h1>
-
+<p>asked by <%= @question.user.user_name %></p>
 <h4><%= @question.content %></h4>
 <% if current_user.id == @question.user.id %>
   <%= link_to "Edit", edit_question_path, :class => "btn btn-primary" %>
@@ -12,12 +12,12 @@
 
 <%= render './answers/form' %><br>
 
-
 <h4>Answers</h4>
 <hr>
 
 <ul>
   <% @question.answers.each do |answer| %>
     <li><%= answer.content %></li>
+    <p>answerd by <%= answer.user.user_name %></p>
   <% end %>
 </ul>
