@@ -4,13 +4,15 @@
 
 <%= link_to "Edit", edit_question_path, :class => "btn btn-primary" %>
 <%= link_to "Remove", question_path(@question),
-                      :confirm => "Sure you want to delete?",
+                      data: { :confirm => "Sure you want to delete?" },
                       :method => "delete",
                       :class => "btn btn-danger" %>
 <hr>
 
 <%= render './answers/form' %><br>
 
+
+<h4>Answers</h4>
 <hr>
 
 <ul>

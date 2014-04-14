@@ -8,6 +8,8 @@
 </head>
 <body>
   <div class="navbar navbar-default navbar-fixed-top">
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
     <div class="container">
       <%= link_to "Homepage", questions_path, :class => "navbar-text pull-left" %>
       <%= link_to 'Ask a Question', new_question_path, :class => "navbar-text pull-left"%>
@@ -16,8 +18,6 @@
   <br><br>
 
   <div class = 'container' id='main'>
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
     <%= yield %>
   </div>
 

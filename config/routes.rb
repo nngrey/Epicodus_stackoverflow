@@ -3,5 +3,9 @@ StackOverflow::Application.routes.draw do
   resources :questions do
     resources :answers
   end
+  resources :users do
+    resources :questions
+    resources :answers
+  end
   resources :answers
 end

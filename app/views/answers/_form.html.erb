@@ -2,7 +2,7 @@
 
 <%= form_for [@question, @answer] do |f| %>
   <div class="form-group">
-    <%= f.label :content, "Answer" %><br>
+    <%= f.label :content, "Your Answer" %><br>
     <%= f.text_area :content %>
   </div>
   <%= f.submit(:class => "btn btn-primary") %>
