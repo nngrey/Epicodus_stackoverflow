@@ -8,17 +8,30 @@
 </head>
 <body>
   <div class="navbar navbar-default navbar-fixed-top">
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+
     <div class="container">
       <%= link_to "Homepage", questions_path, :class => "navbar-text pull-left" %>
-      <%= link_to 'Ask a Question', new_question_path, :class => "navbar-text pull-left"%>
+      <%= link_to 'Ask a Question', new_question_path, :class => "navbar-text pull-left" %>
+
+      <% if current_user %>
+        <%= link_to "Log Out", logout_path, :class => "navbar-text pull-right" %>
+        <div class="navbar-text pull-right">
+          Logged in as <%= current_user.user_name %>
+        </div>
+      <% else %>
+        <%= link_to "Sign Up", signup_path, :class => "navbar-text pull-right" %>
+        <%= link_to "Log In", login_path, :class => "navbar-text pull-right" %>
+      <% end %>
+
     </div>
   </div>
   <br><br>
 
   <div class = 'container' id='main'>
     <%= yield %>
+    <br>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
   </div>
 
 </body>
