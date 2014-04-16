@@ -1,0 +1,7 @@
+<%= form_for question, remote: true do |f| %>
+  <%= link_to question.title, question_path(question) %>
+  <p>asked by <%= question.user.user_name %></p>
+<% end %>
+
+
+

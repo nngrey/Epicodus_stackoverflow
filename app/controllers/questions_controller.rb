@@ -12,8 +12,10 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.new(question_params)
     if @question.save
-      flash[:notice] = 'New question added!'
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to questions_path }
+        format.js
+      end
     else
       render new_question_path
     end
