@@ -1,4 +1,4 @@
-== README
+# Epicodus exercise
 
 Stack Overflow clone
 Let's make a clone of Stack Overflow.
